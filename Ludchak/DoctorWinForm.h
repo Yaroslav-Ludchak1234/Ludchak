@@ -14,6 +14,7 @@ namespace Ludchak {
 	using namespace System::Drawing;
 	using namespace System::Collections::Generic;
 	using namespace System::Data::SqlServerCe;
+	using namespace System::Globalization;
 
 	/// <summary>
 	/// Summary for DoctorWinForm
@@ -22,7 +23,7 @@ namespace Ludchak {
 	{
 	public:
 		MaskedTextBox^ maskedTextBox;
-		DateTimePicker^ dtp = gcnew DateTimePicker();
+		DateTimePicker^ dtp;
 	private:
 		List<Departments^>^ group_dep;
 		System::Data::SqlServerCe::SqlCeConnection^ connect;
@@ -377,6 +378,11 @@ namespace Ludchak {
 
 		
 		this->bunifuDataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DoctorWinForm::bunifuDataGridView1_CellClick);
+		dtp = gcnew DateTimePicker();
+		dtp->Format = DateTimePickerFormat::Custom;
+		dtp->CustomFormat = "dd.MM.yyyy HH:mm";
+		this->dtp->Visible = false;
+		this->bunifuDataGridView1->Controls->Add(dtp);
 	}
 	private: System::Void bunifuDataGridView1_UserDeletingRow(System::Object^ sender, System::Windows::Forms::DataGridViewRowCancelEventArgs^ e) {
 		connect->Open();
@@ -441,8 +447,8 @@ namespace Ludchak {
 		if (this->dtp->Visible) {
 			if (e->ColumnIndex == 4) {
 				/*DateTime tmp = System::Convert::ToDateTime(this->dtp->ToString());*/
-				
-				this->bunifuDataGridView1->CurrentCell->Value = DateTime::Parse(dtp->Value.ToString());
+				CultureInfo^ pro = gcnew CultureInfo("uk-UA");
+				this->bunifuDataGridView1->CurrentCell->Value = DateTime::ParseExact(dtp->Value.ToString(), "dd.MM.yyyy HH:mm:ss", pro);
 				this->dtp->Visible = false;
 			}
 		}
@@ -480,24 +486,29 @@ namespace Ludchak {
 
 			if (e->ColumnIndex == 4)
 			{
-				DateTimePicker^ dtp = gcnew DateTimePicker();
-				dtp->Format = DateTimePickerFormat::Custom;
-				dtp->CustomFormat = "dd.MM.yyyy HH:mm";
-				dtp->Visible = true;
-				dtp->Value = System::Convert::ToDateTime(this->bunifuDataGridView1->CurrentCell->Value->ToString());
+				
+						
+				
 
 				// set size and location
 				typedef System::Drawing::Rectangle R;
 				R rect = this->bunifuDataGridView1->GetCellDisplayRectangle(this->bunifuDataGridView1->CurrentCell->ColumnIndex, this->bunifuDataGridView1->CurrentCell->RowIndex, true);
+				dtp->Visible = true;
+				CultureInfo^ pro = gcnew CultureInfo("uk-UA");
+				dtp->Value = DateTime::ParseExact(this->bunifuDataGridView1->CurrentCell->Value->ToString(), "dd.MM.yyyy HH:mm:ss", pro);
 				dtp->Size = this->bunifuDataGridView1->CurrentCell->Size;
 				dtp->Location = rect.Location;
+
 				// attach events		
 
-				this->bunifuDataGridView1->Controls->Add(dtp);
+				
 				/*CultureInfo provider = CultureInfo.InvariantCulture;*/
 				
-				this->bunifuDataGridView1->CurrentCell->Value = DateTime::Parse(dtp->Value.ToString());
+				this->bunifuDataGridView1->CurrentCell->Value = DateTime::ParseExact(dtp->Value.ToString(), "dd.MM.yyyy HH:mm:ss", pro);
 			}
+			/*else {
+				dtp->Visible = false;
+			}*/
 		}
 	}
 	private: System::Void bunifuDataGridView1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {

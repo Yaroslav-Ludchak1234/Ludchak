@@ -119,10 +119,31 @@
       <HintPath>Bunifu.Licensing</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.1.5.3">
-      <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated">
+      <HintPath>..\..\..\..\Desktop\все\Bunifu_UI_WinForms_v4.1.1_Downloadly.ir\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
