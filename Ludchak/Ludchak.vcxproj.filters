@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Photo">
+      <UniqueIdentifier>{4c850149-5ae0-42b4-98fe-e2c336a4dd44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyClass">
+      <UniqueIdentifier>{6184db11-a71b-4cd3-93e3-9b322f647047}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicWinForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DepartmentsWinForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoctorWinForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Clinic.h">
+      <Filter>MyClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Departments.h">
+      <Filter>MyClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Doctor.h">
+      <Filter>MyClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Patient.h">
+      <Filter>MyClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Reception_Order.h">
+      <Filter>MyClass</Filter>
+    </ClInclude>
+    <ClInclude Include="ClinicWinForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DepartmentsWinForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoctorWinForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="hospital_3_50px.png">
+      <Filter>Photo</Filter>
+    </Image>
+    <Image Include="doctor_male_50px.png">
+      <Filter>Photo</Filter>
+    </Image>
+    <Image Include="lab_coat_50px.png">
+      <Filter>Photo</Filter>
+    </Image>
+    <Image Include="sick_50px.png">
+      <Filter>Photo</Filter>
+    </Image>
+    <Image Include="ticket_50px.png">
+      <Filter>Photo</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MedecineCentre.sdf" />
+    <None Include="licenses.licx" />
+  </ItemGroup>
+</Project>
