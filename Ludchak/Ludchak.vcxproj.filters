@@ -33,6 +33,12 @@
     <ClCompile Include="DoctorWinForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PatientWinForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReceptionOrderWinForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -60,6 +66,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DoctorWinForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatientWinForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReceptionOrderWinForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

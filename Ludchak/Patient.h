@@ -16,17 +16,19 @@ ref class Patient {
 	String^ p_card_bank;
 	int p_col_day;
 	int Clinic_c_id_clinic;
+	String^ path;
 
 public: // відкриті члени класу
 	Patient() {}// порожній конструктор
 	// конструктор ініціалізаціі полів об’єктів класу
-	Patient(int num_record, String^ full_name, DateTime^ birthday, String^ complaints, String^ diognosis, String^ num_tel, String^ card_bank, int pc, int cicc) {
+	Patient(int num_record, String^ full_name, DateTime^ birthday, String^ complaints, String^ diognosis, String^ num_tel, String^ card_bank, int pc, int cicc, String^ pat) {
 		this->p_full_name = full_name;
 		this->p_birthday = birthday;
 		this->p_complaints = complaints;
 		this->p_diognosis = diognosis;
 		this->p_num_tel = num_tel;
 		this->p_card_bank = card_bank;
+		this->path = pat;
 
 		if (pc > 0) {
 			this->p_num_record = num_record;
@@ -51,4 +53,5 @@ public: // відкриті члени класу
 	int getColDay() { return this->p_col_day; }
 	int getClinicCIdClinic() { return this->Clinic_c_id_clinic;	}
 	int getId() { return this->p_num_record; }
+	String^ getPath() { return this->path; }
 };

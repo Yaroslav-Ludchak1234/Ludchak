@@ -160,6 +160,8 @@
     <ClCompile Include="DepartmentsWinForm.cpp" />
     <ClCompile Include="DoctorWinForm.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="PatientWinForm.cpp" />
+    <ClCompile Include="ReceptionOrderWinForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clinic.h" />
@@ -178,6 +180,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Patient.h" />
+    <ClInclude Include="PatientWinForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ReceptionOrderWinForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Reception_Order.h" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +200,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientWinForm.resx">
+      <DependentUpon>PatientWinForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionOrderWinForm.resx">
+      <DependentUpon>ReceptionOrderWinForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,8 @@
 #include "ClinicWinForm.h"
 #include "DepartmentsWinForm.h"
 #include "DoctorWinForm.h"
+#include "PatientWinForm.h"
+#include "ReceptionOrderWinForm.h"
 #pragma once
 
 
@@ -198,6 +200,7 @@ namespace Ludchak {
 			this->bunifuTileButton4->Name = L"bunifuTileButton4";
 			this->bunifuTileButton4->Size = System::Drawing::Size(128, 125);
 			this->bunifuTileButton4->TabIndex = 7;
+			this->bunifuTileButton4->Click += gcnew System::EventHandler(this, &MyForm::bunifuTileButton4_Click);
 			// 
 			// bunifuTileButton5
 			// 
@@ -223,6 +226,7 @@ namespace Ludchak {
 			this->bunifuTileButton5->Name = L"bunifuTileButton5";
 			this->bunifuTileButton5->Size = System::Drawing::Size(128, 125);
 			this->bunifuTileButton5->TabIndex = 8;
+			this->bunifuTileButton5->Click += gcnew System::EventHandler(this, &MyForm::bunifuTileButton5_Click);
 			// 
 			// bunifuTileButton6
 			// 
@@ -301,6 +305,12 @@ private: System::Void bunifuTileButton2_Click(System::Object^ sender, System::Ev
 }
 private: System::Void bunifuTileButton3_Click(System::Object^ sender, System::EventArgs^ e) {
 	OpenChildForm(gcnew DoctorWinForm(), sender);
+}
+private: System::Void bunifuTileButton4_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenChildForm(gcnew PatientWinForm(), sender);
+}
+private: System::Void bunifuTileButton5_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenChildForm(gcnew ReceptionOrderWinForm(), sender);
 }
 };
 }
