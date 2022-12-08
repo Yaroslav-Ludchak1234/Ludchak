@@ -38,7 +38,16 @@ namespace Ludchak {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column9;
 	private: System::Windows::Forms::DataGridViewComboBoxColumn^ Column7;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column10;
-		   System::Data::SqlServerCe::SqlCeConnection^ connect;
+	private: Bunifu::Framework::UI::BunifuThinButton2^ bunifuThinButton22;
+	public: System::Windows::Forms::TextBox^ textBox7;
+	private:
+	public: System::Windows::Forms::TextBox^ textBox6;
+	public: System::Windows::Forms::TextBox^ textBox5;
+	public: System::Windows::Forms::TextBox^ textBox4;
+	public: System::Windows::Forms::TextBox^ textBox3;
+	public: System::Windows::Forms::TextBox^ textBox2;
+	public: System::Windows::Forms::TextBox^ textBox1;
+		  System::Data::SqlServerCe::SqlCeConnection^ connect;
 		
 	public:
 		PatientWinForm(void)
@@ -260,8 +269,6 @@ namespace Ludchak {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PatientWinForm::typeid));
 			this->bunifuDataGridView1 = (gcnew Bunifu::UI::WinForms::BunifuDataGridView());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->bunifuThinButton21 = (gcnew Bunifu::Framework::UI::BunifuThinButton2());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -272,6 +279,16 @@ namespace Ludchak {
 			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column7 = (gcnew System::Windows::Forms::DataGridViewComboBoxColumn());
 			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->bunifuThinButton21 = (gcnew Bunifu::Framework::UI::BunifuThinButton2());
+			this->bunifuThinButton22 = (gcnew Bunifu::Framework::UI::BunifuThinButton2());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuDataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -349,46 +366,9 @@ namespace Ludchak {
 			this->bunifuDataGridView1->RowHeadersWidth = 51;
 			this->bunifuDataGridView1->RowTemplate->Height = 40;
 			this->bunifuDataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->bunifuDataGridView1->Size = System::Drawing::Size(1897, 558);
+			this->bunifuDataGridView1->Size = System::Drawing::Size(1897, 494);
 			this->bunifuDataGridView1->TabIndex = 3;
 			this->bunifuDataGridView1->Theme = Bunifu::UI::WinForms::BunifuDataGridView::PresetThemes::Maroon;
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->pictureBox1->Location = System::Drawing::Point(45, 576);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(340, 320);
-			this->pictureBox1->TabIndex = 4;
-			this->pictureBox1->TabStop = false;
-			// 
-			// bunifuThinButton21
-			// 
-			this->bunifuThinButton21->ActiveBorderThickness = 1;
-			this->bunifuThinButton21->ActiveCornerRadius = 20;
-			this->bunifuThinButton21->ActiveFillColor = System::Drawing::Color::SeaGreen;
-			this->bunifuThinButton21->ActiveForecolor = System::Drawing::Color::White;
-			this->bunifuThinButton21->ActiveLineColor = System::Drawing::Color::SeaGreen;
-			this->bunifuThinButton21->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(91)));
-			this->bunifuThinButton21->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuThinButton21.BackgroundImage")));
-			this->bunifuThinButton21->ButtonText = L"ThinButton";
-			this->bunifuThinButton21->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuThinButton21->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->bunifuThinButton21->ForeColor = System::Drawing::Color::SeaGreen;
-			this->bunifuThinButton21->IdleBorderThickness = 1;
-			this->bunifuThinButton21->IdleCornerRadius = 20;
-			this->bunifuThinButton21->IdleFillColor = System::Drawing::Color::White;
-			this->bunifuThinButton21->IdleForecolor = System::Drawing::Color::SeaGreen;
-			this->bunifuThinButton21->IdleLineColor = System::Drawing::Color::SeaGreen;
-			this->bunifuThinButton21->Location = System::Drawing::Point(45, 893);
-			this->bunifuThinButton21->Margin = System::Windows::Forms::Padding(5);
-			this->bunifuThinButton21->Name = L"bunifuThinButton21";
-			this->bunifuThinButton21->Size = System::Drawing::Size(340, 52);
-			this->bunifuThinButton21->TabIndex = 5;
-			this->bunifuThinButton21->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->bunifuThinButton21->Click += gcnew System::EventHandler(this, &PatientWinForm::bunifuThinButton21_Click);
 			// 
 			// Column1
 			// 
@@ -454,6 +434,154 @@ namespace Ludchak {
 			this->Column10->Name = L"Column10";
 			this->Column10->Visible = false;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->pictureBox1->Location = System::Drawing::Point(45, 576);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(340, 320);
+			this->pictureBox1->TabIndex = 4;
+			this->pictureBox1->TabStop = false;
+			// 
+			// bunifuThinButton21
+			// 
+			this->bunifuThinButton21->ActiveBorderThickness = 1;
+			this->bunifuThinButton21->ActiveCornerRadius = 30;
+			this->bunifuThinButton21->ActiveFillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bunifuThinButton21->ActiveForecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton21->ActiveLineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton21->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(91)));
+			this->bunifuThinButton21->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuThinButton21.BackgroundImage")));
+			this->bunifuThinButton21->ButtonText = L"Фото";
+			this->bunifuThinButton21->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->bunifuThinButton21->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bunifuThinButton21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton21->IdleBorderThickness = 1;
+			this->bunifuThinButton21->IdleCornerRadius = 30;
+			this->bunifuThinButton21->IdleFillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton21->IdleForecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bunifuThinButton21->IdleLineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bunifuThinButton21->Location = System::Drawing::Point(45, 893);
+			this->bunifuThinButton21->Margin = System::Windows::Forms::Padding(5);
+			this->bunifuThinButton21->Name = L"bunifuThinButton21";
+			this->bunifuThinButton21->Size = System::Drawing::Size(340, 52);
+			this->bunifuThinButton21->TabIndex = 5;
+			this->bunifuThinButton21->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->bunifuThinButton21->Click += gcnew System::EventHandler(this, &PatientWinForm::bunifuThinButton21_Click);
+			// 
+			// bunifuThinButton22
+			// 
+			this->bunifuThinButton22->ActiveBorderThickness = 1;
+			this->bunifuThinButton22->ActiveCornerRadius = 30;
+			this->bunifuThinButton22->ActiveFillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bunifuThinButton22->ActiveForecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton22->ActiveLineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton22->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(91)));
+			this->bunifuThinButton22->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuThinButton22.BackgroundImage")));
+			this->bunifuThinButton22->ButtonText = L"Очистити";
+			this->bunifuThinButton22->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->bunifuThinButton22->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bunifuThinButton22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton22->IdleBorderThickness = 1;
+			this->bunifuThinButton22->IdleCornerRadius = 30;
+			this->bunifuThinButton22->IdleFillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuThinButton22->IdleForecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bunifuThinButton22->IdleLineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bunifuThinButton22->Location = System::Drawing::Point(1628, 514);
+			this->bunifuThinButton22->Margin = System::Windows::Forms::Padding(5);
+			this->bunifuThinButton22->Name = L"bunifuThinButton22";
+			this->bunifuThinButton22->Size = System::Drawing::Size(271, 56);
+			this->bunifuThinButton22->TabIndex = 16;
+			this->bunifuThinButton22->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox7->Location = System::Drawing::Point(1358, 514);
+			this->textBox7->Multiline = true;
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(214, 56);
+			this->textBox7->TabIndex = 15;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox6->Location = System::Drawing::Point(1138, 514);
+			this->textBox6->Multiline = true;
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(214, 56);
+			this->textBox6->TabIndex = 14;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox5->Location = System::Drawing::Point(918, 514);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(214, 56);
+			this->textBox5->TabIndex = 13;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox4->Location = System::Drawing::Point(698, 514);
+			this->textBox4->Multiline = true;
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(214, 56);
+			this->textBox4->TabIndex = 12;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox3->Location = System::Drawing::Point(478, 514);
+			this->textBox3->Multiline = true;
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(214, 56);
+			this->textBox3->TabIndex = 11;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(258, 514);
+			this->textBox2->Multiline = true;
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(214, 56);
+			this->textBox2->TabIndex = 10;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Perpetua Titling MT", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(38, 514);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(214, 56);
+			this->textBox1->TabIndex = 9;
+			// 
 			// PatientWinForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -461,6 +589,14 @@ namespace Ludchak {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(91)));
 			this->ClientSize = System::Drawing::Size(1921, 983);
+			this->Controls->Add(this->bunifuThinButton22);
+			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->bunifuThinButton21);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->bunifuDataGridView1);
@@ -470,6 +606,7 @@ namespace Ludchak {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuDataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
