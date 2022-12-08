@@ -209,6 +209,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\likari-bili-halaty-medychne.jpg" />
     <Image Include="doctor_male_50px.png" />
     <Image Include="hospital_3_50px.png" />
     <Image Include="lab_coat_50px.png" />

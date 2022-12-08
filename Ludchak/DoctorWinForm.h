@@ -27,7 +27,8 @@ namespace Ludchak {
 	private:
 		List<Departments^>^ group_dep;
 		System::Data::SqlServerCe::SqlCeConnection^ connect;
-		int Depid;
+	private: System::Windows::Forms::TextBox^ textBox1;
+		   int Depid;
 	private:
 		List<Doctor^>^ group_doctor;
 	public:
@@ -220,6 +221,7 @@ namespace Ludchak {
 			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column7 = (gcnew System::Windows::Forms::DataGridViewComboBoxColumn());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuDataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -299,7 +301,6 @@ namespace Ludchak {
 			this->bunifuDataGridView1->Size = System::Drawing::Size(1897, 701);
 			this->bunifuDataGridView1->TabIndex = 2;
 			this->bunifuDataGridView1->Theme = Bunifu::UI::WinForms::BunifuDataGridView::PresetThemes::Maroon;
-			
 			// 
 			// Column1
 			// 
@@ -346,6 +347,15 @@ namespace Ludchak {
 			this->Column7->Resizable = System::Windows::Forms::DataGridViewTriState::True;
 			this->Column7->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(12, 719);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(313, 44);
+			this->textBox1->TabIndex = 3;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &DoctorWinForm::textBox1_TextChanged);
+			// 
 			// DoctorWinForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -353,12 +363,14 @@ namespace Ludchak {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(185)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(91)));
 			this->ClientSize = System::Drawing::Size(1921, 983);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->bunifuDataGridView1);
 			this->Name = L"DoctorWinForm";
 			this->Text = L"DoctorWinForm";
 			this->Load += gcnew System::EventHandler(this, &DoctorWinForm::DoctorWinForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuDataGridView1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -395,10 +407,7 @@ namespace Ludchak {
 
 	private: System::Void bunifuDataGridView1_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		connect->Open();
-		int i = e->RowIndex;
-		System::Convert::ToInt32(this->bunifuDataGridView1->Rows[e->RowIndex]->Cells[0]->Value);
-		String^ str = bunifuDataGridView1->Rows[e->RowIndex]->Cells[4]->Value->ToString();
-		DateTime tmpdt = DateTime::Parse(str);
+		int i = e->RowIndex;		
 		String^ query = "UPDATE Doctor SET [do_full]='" + System::Convert::ToString(this->bunifuDataGridView1->Rows[e->RowIndex]->Cells[1]->Value) +
 			"', [do_num_room]='" + System::Convert::ToInt32(this->bunifuDataGridView1->Rows[e->RowIndex]->Cells[2]->Value) +
 			"', [do_qualification]='" + System::Convert::ToString(this->bunifuDataGridView1->Rows[e->RowIndex]->Cells[3]->Value) +
@@ -417,10 +426,7 @@ namespace Ludchak {
 	private: System::Void bunifuDataGridView1_RowsAdded(System::Object^ sender, System::Windows::Forms::DataGridViewRowsAddedEventArgs^ e) {
 		connect->Open();
 		int zero = 8;
-		DateTime dtNow = DateTime::Now;
-		
-		/*String^ query = "INSERT INTO [Doctor]([do_full], [do_num_room], [do_qualification], [do_birthday], [do_spec], [Departments_d_id])" + "VALUES('" + "0" + "','" + 1 +
-			"'," + "0" + "," + 1 + "," + "09.09.2022 0:12:00" + "," + zero + "); ";*/
+		DateTime dtNow = DateTime::Now;		
 		String^ query = "INSERT INTO [Doctor]([do_full], [do_num_room], [do_qualification], [do_birthday], [do_spec], [Departments_d_id])" 
 			+ "VALUES('" + "0" + "'," + 1 + ",'" + "0" + "','" + dtNow + "','" + "0" + "',"+ zero + "); ";
 		SqlCeCommand^ command = connect->CreateCommand();
@@ -530,6 +536,27 @@ private: System::Void bunifuDataGridView1_CellClick(System::Object^ sender, Syst
 		
 	} 
 }
+private: System::Void Leave(System::Object^ sender, System::EventArgs^ e) {
+		   this->bunifuDataGridView1->RowsAdded += gcnew System::Windows::Forms::DataGridViewRowsAddedEventHandler(this, &DoctorWinForm::bunifuDataGridView1_RowsAdded);
+	   }
 	   
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	this->bunifuDataGridView1->RowsAdded -= gcnew System::Windows::Forms::DataGridViewRowsAddedEventHandler(this, &DoctorWinForm::bunifuDataGridView1_RowsAdded);
+	int i = 0;
+	bunifuDataGridView1->Rows->Clear();
+	for each (Doctor ^ category_Doc in group_doctor) {
+		if (category_Doc->getFull() == this->textBox1->Text) {
+			this->bunifuDataGridView1->Rows->Add();
+			this->bunifuDataGridView1->Rows[i]->Cells[0]->Value = category_Doc->getId();
+			this->bunifuDataGridView1->Rows[i]->Cells[1]->Value = category_Doc->getFull();
+			this->bunifuDataGridView1->Rows[i]->Cells[2]->Value = category_Doc->getNumRoom();
+			this->bunifuDataGridView1->Rows[i]->Cells[3]->Value = category_Doc->getQualification();
+			this->bunifuDataGridView1->Rows[i]->Cells[4]->Value = category_Doc->getBirthday();
+			this->bunifuDataGridView1->Rows[i]->Cells[5]->Value = category_Doc->getSpecialist();
+			this->bunifuDataGridView1->Rows[i]->Cells[6]->Value = getValueFromComboBox(category_Doc->getDepartaments());
+			++i;
+		}
+	}
+}
 };
 }

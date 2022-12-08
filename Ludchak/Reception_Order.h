@@ -6,8 +6,7 @@ using namespace std;
 using namespace System;
 // оголошення класу
 ref class ReceptionOrder {
-	//закриті поля класу для збереження даних про ім’я, прізвище, номер телефону,
-	//категорії контактів та номер контакту у записнику
+	
 	int ro_num_id;
 	DateTime^ ro_date_time;
 	DateTime^ ro_date_time_limit;

@@ -119,6 +119,8 @@ namespace Ludchak {
 			// 
 			this->panelDesktopPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->panelDesktopPanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelDesktopPanel.BackgroundImage")));
+			this->panelDesktopPanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->panelDesktopPanel->Location = System::Drawing::Point(128, 43);
 			this->panelDesktopPanel->Name = L"panelDesktopPanel";
 			this->panelDesktopPanel->Size = System::Drawing::Size(1931, 1018);

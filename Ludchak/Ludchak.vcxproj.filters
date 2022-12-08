@@ -91,6 +91,9 @@
     <Image Include="ticket_50px.png">
       <Filter>Photo</Filter>
     </Image>
+    <Image Include="..\..\..\..\Desktop\likari-bili-halaty-medychne.jpg">
+      <Filter>Photo</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="MedecineCentre.sdf" />
